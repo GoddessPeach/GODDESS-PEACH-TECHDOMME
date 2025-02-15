@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goddess Peach’s Digital Prison</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 50px;
+            backdrop-filter: blur(5px);
+        }
+        #redLight {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+            background: red;
+            border-radius: 50%;
+            box-shadow: 0 0 10px red;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .hidden { display: none; }
+        button {
+            background: #ff0000;
+            color: white;
+            padding: 15px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .glitch {
+            animation: glitchEffect 1s infinite;
+        }
+        @keyframes glitchEffect {
+            0% { text-shadow: 2px 2px red; }
+            50% { text-shadow: -2px -2px blue; }
+            100% { text-shadow: 2px 2px red; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="glitch">🔴 LIVE – YOU BELONG TO GODDESS PEACH</h1>
+    <div id="redLight"></div>
+    <p id="status">Analyzing your device... Tracking initiated...</p>
+    <p id="location"></p>
+    <p id="recording">[🔴 RECORDING] 00:00</p>
+    <p id="threats" class="glitch">Your screen belongs to me. Your data belongs to me. You belong to me.</p>
+
+    <h2>👑 Who is Goddess Peach? 👑</h2>
+    <p>
+        Goddess Peach is **the ultimate TechDomme**, a digital force you cannot escape.  
+        Your screen, your data, your **entire existence** is in her hands.  
+        Every click, every action is logged. You are **trapped** in her domain now.
+    </p>
+    <p class="glitch"><strong>🔒 There is no escape. Only total submission.</strong></p>
+
+    <button onclick="tribute()">SUBMIT TRIBUTE – ACCEPT YOUR PLACE</button>
+
+    <script>
+        // Fake Webcam Activation
+        setTimeout(() => {
+            document.getElementById("status").innerText = "Webcam detected. Overriding permissions...";
+            setTimeout(() => {
+                document.getElementById("status").innerText = "Live camera detected. Hidden mode enabled.";
+            }, 2000);
+        }, 3000);
+
+        // Fake Recording Timer
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            document.getElementById("recording").innerText = `[🔴 RECORDING] 00:${seconds < 10 ? "0" + seconds : seconds}`;
+        }, 1000);
+
+        // Fake Geolocation Tracking
+        fetch("https://ipapi.co/json")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("location").innerText = `Location: ${data.city}, ${data.region}`;
+                setTimeout(() => {
+                    document.getElementById("threats").innerText = `I see you, ${data.city}. Running is pointless.`;
+                }, 5000);
+            })
+            .catch(() => {
+                document.getElementById("location").innerText = "Tracking location...";
+            });
+
+        // Tribute Button Redirection
+        function tribute() {
+            alert("Submission confirmed. You are officially owned.");
+            window.location.href = "https://tr.ee/gR5K1lWW9N"; 
+        }
+
+        // Fake Escape Prevention
+        window.onbeforeunload = function() {
+            return "ESCAPE ATTEMPT DETECTED. SYSTEM LOCKED.";
+        };
+
+        // Psychological Audio Triggers
+        setTimeout(() => {
+            let audio = new Audio("https://www.myinstants.com/media/sounds/creepy-whisper.mp3");
+            audio.play();
+        }, 7000);
+
+        setTimeout(() => {
+            let audio2 = new Audio("https://www.myinstants.com/media/sounds/evil-laugh.mp3");
+            audio2.play();
+        }, 12000);
+
+        // Dynamic Threat Messages
+        setTimeout(() => {
+            document.getElementById("threats").innerText = "All of your actions are now monitored. There is no escape.";
+        }, 15000);
+
+        setTimeout(() => {
+            document.getElementById("threats").innerText = "Your files are being scanned. Everything is in my hands.";
+        }, 25000);
+        
+    </script>
+
+</body>
+</html>
